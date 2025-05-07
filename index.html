@@ -13,9 +13,21 @@
         align-items: center; /* Centers container vertically (for full page height) */
         min-height: 100vh; /* Ensures body takes at least full viewport height */
       }
+      /* --- Container Styling --- */
+      .container {
+          background-color: #fff; /* White background for the content area */
+          padding: 20px 40px;
+          border-radius: 8px; /* Slightly rounded corners */
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+          text-align: center; /* Center the h1 and the social links list */
+          max-width: 500px; /* Prevents content from becoming too wide on large screens */
+          width: 90%; /* Ensures container is responsive on smaller screens */
+      }
     </style>
   </head>
   <body>
-    <h1>Hey <a href="https://discord.gg/Y837qFC2mZ">join the discord</a> and DM me about coaching services</h1>
+    <div class="container">
+      <h1>Hey <a href="https://discord.gg/Y837qFC2mZ">join the discord</a> and DM me about coaching services</h1>
+    </div>
   </body>
 </html>

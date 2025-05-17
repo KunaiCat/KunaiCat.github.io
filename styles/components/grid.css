@@ -6,7 +6,8 @@
   max-width: var(--max-width);
 }
 
-@media (max-width: var(--mobile-breakpoint)) {
+/* Fixed media query value to ensure compatibility */
+@media (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
   }

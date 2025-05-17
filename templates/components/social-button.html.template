@@ -1,0 +1,8 @@
+<a href="{{PLATFORM_URL}}" class="link-wrapper">
+  <div class="container">
+    <h3 class="social-icon">
+      {{ICON_SVG}}
+      <span>{{PLATFORM_NAME}}</span>
+    </h3>
+  </div>
+</a> 

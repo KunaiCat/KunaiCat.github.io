@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KunaiCat OW2 Coaching</title>
+  <link rel="icon" type="image/x-icon" href="/images/kiriFavicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <h1 class="page-title">KunaiCat's Social Links</h1>
+  
+  <div class="grid-container">
+    {{SOCIAL_BUTTONS}}
+  </div>
+</body>
+</html> 

@@ -3,6 +3,7 @@
 ## Architecture Overview
 - Static site hosted on GitHub Pages
 - Pure HTML/CSS implementation
+- Python-based template generation
 - No JavaScript frameworks or dependencies
 - Component-based modular structure
 
@@ -19,6 +20,32 @@ KunaiCat.github.io/
 │   │   └── social-button.css
 │   └── utils/
 ├── components/
+│   └── social-button.html
+├── images/
+│   └── kiriFavicon.ico
+└── CNAME
+```
+
+### Planned Template Generation Structure
+```
+KunaiCat.github.io/
+├── index.html (generated)
+├── templates/
+│   ├── index.html.template
+│   └── components/
+│       └── social-button.html.template
+├── scripts/
+│   └── generate_site.py
+├── data/
+│   └── social_links.json
+├── styles/
+│   ├── main.css
+│   ├── variables.css
+│   ├── components/
+│   │   ├── grid.css
+│   │   └── social-button.css
+│   └── utils/
+├── components/ (for reference)
 │   └── social-button.html
 ├── images/
 │   └── kiriFavicon.ico
@@ -46,6 +73,12 @@ KunaiCat.github.io/
    - Hover effects
    - Border accents
 
+4. Template System
+   - Double curly brackets for placeholders: `{{PLACEHOLDER}}`
+   - Python-based template processing
+   - JSON data sources
+   - Component composition
+
 ## Implementation Guidelines
 1. CSS Organization
    - CSS variables for theme values
@@ -65,6 +98,12 @@ KunaiCat.github.io/
    - Minimal dependencies
    - SVG icon integration
 
+4. Template Usage
+   - Use `{{PLACEHOLDER}}` format for all template variables
+   - Keep templates as close as possible to final HTML
+   - Document all placeholder variables
+   - Design for reusability
+
 ## File Responsibilities
 1. variables.css
    - Global theme configuration
@@ -81,10 +120,10 @@ KunaiCat.github.io/
 3. Component Files
    - grid.css: Layout system
    - social-button.css: Button styling
-   - social-button.html: Component template
+   - social-button.html.template: Component template
 
-4. Utils Directory
-   - Reserved for future utility classes
-   - Will contain shared styles
-   - Helper functions
-   - Responsive utilities 
+4. Python Scripts
+   - generate_site.py: Main site generation script
+   - Template processing
+   - Data loading and injection
+   - File output management 

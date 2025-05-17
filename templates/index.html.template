@@ -11,7 +11,12 @@
   <h1 class="page-title">KunaiCat's Social Links</h1>
   
   <div class="grid-container">
-    {{SOCIAL_BUTTONS}}
+    {{social-button.twitch}}
+    {{social-button.discord}}
+    {{social-button.youtube}}
+    {{social-button.tiktok}}
+    {{social-button.paypal}}
+    {{social-button.patreon}}
   </div>
 </body>
 </html> 

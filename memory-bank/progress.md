@@ -11,9 +11,10 @@
 - ✅ Modular component structure
 - ✅ CSS organization
 - ✅ Component templating
+- ✅ Basic Python-based template generation
 
 ## Current Status
-The website has been successfully refactored into a modular structure. We are now implementing a template-based site generation system using Python to enhance maintainability and prepare for future features like blog functionality.
+The website has been successfully refactored into a modular structure with a basic template-based site generation system. We are now enhancing the templating system to support component variants using dot notation, which will make the system more flexible and maintainable.
 
 ### Active Features
 - Social media links grid
@@ -24,29 +25,34 @@ The website has been successfully refactored into a modular structure. We are no
 - Component templates
 - CSS modules
 - Theme variables
+- JSON data source
+- Template-based generation
 
 ## What's Left to Build
-### Immediate Tasks (Template System)
-1. Template Format Update
-   - [ ] Update templates to use `{{PLACEHOLDER}}` format
-   - [ ] Create templates/ directory structure
-   - [ ] Move component templates to new location
+### Immediate Tasks (Enhanced Templating System)
+1. Component Variant System
+   - [ ] Create component.variant reference syntax
+   - [ ] Implement recursive template processing
+   - [ ] Add default.json fallback logic
+   - [ ] Support data merging between default and variant files
 
-2. Data Structure
-   - [ ] Create social_links.json data file
-   - [ ] Define schema for social links data
-   - [ ] Extract existing content to data file
+2. Data Structure Reorganization
+   - [ ] Create component-specific data directories
+   - [ ] Convert social_links.json to individual component data files
+   - [ ] Create default.json for each component type
+   - [ ] Implement variant-specific JSON files
 
-3. Python Generator
-   - [ ] Create generate_site.py script
-   - [ ] Implement template loading
-   - [ ] Add placeholder replacement logic
-   - [ ] Set up HTML generation
+3. Generator Refactoring
+   - [ ] Update template parser for dot notation
+   - [ ] Implement component resolution logic
+   - [ ] Create data merging utilities
+   - [ ] Add better error handling and logging
 
-4. Testing & Verification
-   - [ ] Test generated site against current version
-   - [ ] Verify all links and styles
-   - [ ] Document generation process
+4. Testing & Documentation
+   - [ ] Verify all component variants render correctly
+   - [ ] Document new templating system architecture
+   - [ ] Update README with usage examples
+   - [ ] Add system diagrams for template resolution
 
 ### Future Enhancements (Not Started)
 - Blog functionality with Markdown processing
@@ -67,13 +73,14 @@ The website has been successfully refactored into a modular structure. We are no
 - Reusable component templates
 - Theme variable system
 - Organized directory structure
+- Basic template variable replacement
 
-### Next Implementation
-- Python-based site generation
-- Double curly bracket template format
-- JSON data source for content
-- Separation of content and presentation
-- Foundation for static site generator
+### Planned Implementation
+- Component variant system with dot notation
+- Component-specific data directories
+- Default data with variant overrides
+- Recursive template processing
+- Clear 1:1 mapping between templates and data
 
 ### Lessons Learned
 1. Benefits of New Structure:
@@ -86,4 +93,12 @@ The website has been successfully refactored into a modular structure. We are no
    - Better separation of concerns
    - Modular style organization
    - Component templating system
-   - Consistent theming approach 
+   - Consistent theming approach
+   - Content-presentation separation
+
+3. Planned Improvements:
+   - More intuitive component referencing
+   - Reduced data redundancy via defaults
+   - Better scaling for growing component library
+   - Easier addition of new component variants
+   - More maintainable and extendable system 

@@ -9,6 +9,7 @@
 - Python 3
   - Template processing
   - JSON data handling
+  - Recursive component resolution
 - GitHub Pages (hosting)
 
 ## Development Environment
@@ -59,7 +60,12 @@ KunaiCat.github.io/
 ├── scripts/
 │   └── generate_site.py
 ├── data/
-│   └── social_links.json
+│   └── components/
+│       └── social-button/
+│           ├── default.json
+│           ├── twitch.json
+│           ├── discord.json
+│           └── ...
 ├── styles/
 │   ├── main.css
 │   ├── variables.css
@@ -81,15 +87,17 @@ KunaiCat.github.io/
 - Modular imports system
 
 ## Component Architecture
-- Template-based components with `{{PLACEHOLDER}}` syntax
-- Reusable social button pattern
+- Template-based components with `{{component.variant}}` syntax
+- Reusable component patterns with variants
 - Consistent styling through CSS variables
-- SVG icon integration via templates
+- Component-specific data files
 
 ## Python Template Processing
-- String replacement for placeholders
-- JSON data source for dynamic content
-- Component composition
+- Dot notation for component references
+- Recursive template resolution
+- Data merging between default and variant JSON files
+- Fallback to default data when variant is missing properties
+- Component composition through template references
 - Error handling and validation
 - Clean output formatting
 
@@ -102,21 +110,25 @@ KunaiCat.github.io/
 
 ## Development Workflow
 1. Template Development
-   - Update templates in templates/ directory
-   - Use `{{PLACEHOLDER}}` syntax for dynamic content
+   - Update templates in templates/components/ directory
+   - Use `{{component.variant}}` syntax for component references
+   - Create component variants with shared structure
    - Maintain HTML validity
 
 2. Data Management
-   - Edit social_links.json for content changes
-   - Structure data for readability and maintenance
-   - Validate against template requirements
+   - Create component-specific data directories
+   - Define default.json for each component type
+   - Create variant-specific JSON files as needed
+   - Structure data for consistency across variants
 
 3. Site Generation
-   - Run Python script to generate HTML
-   - Verify output in local environment
+   - Run Python script to process templates recursively
+   - Merge default and variant data automatically
+   - Generate complete HTML output
    - Deploy to GitHub Pages
 
 4. Testing Process
    - Local server preview
+   - Verify all component variants render correctly
    - Mobile responsive testing
    - Cross-browser verification 

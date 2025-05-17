@@ -26,7 +26,7 @@ KunaiCat.github.io/
 └── CNAME
 ```
 
-### Planned Template Generation Structure
+### Enhanced Template Generation Structure
 ```
 KunaiCat.github.io/
 ├── index.html (generated)
@@ -37,7 +37,13 @@ KunaiCat.github.io/
 ├── scripts/
 │   └── generate_site.py
 ├── data/
-│   └── social_links.json
+│   └── components/
+│       └── social-button/
+│           ├── default.json
+│           ├── twitch.json
+│           ├── discord.json
+│           ├── youtube.json
+│           └── ...
 ├── styles/
 │   ├── main.css
 │   ├── variables.css
@@ -74,10 +80,11 @@ KunaiCat.github.io/
    - Border accents
 
 4. Template System
-   - Double curly brackets for placeholders: `{{PLACEHOLDER}}`
+   - Component reference with dot notation: `{{component.variant}}`
+   - Default data with variant overrides
+   - Recursive component resolution
    - Python-based template processing
-   - JSON data sources
-   - Component composition
+   - Component-specific JSON data
 
 ## Implementation Guidelines
 1. CSS Organization
@@ -99,10 +106,10 @@ KunaiCat.github.io/
    - SVG icon integration
 
 4. Template Usage
-   - Use `{{PLACEHOLDER}}` format for all template variables
-   - Keep templates as close as possible to final HTML
-   - Document all placeholder variables
-   - Design for reusability
+   - Use `{{component.variant}}` format for template references
+   - Each component has a default.json for fallback values
+   - Component variants stored as separate JSON files
+   - Templates support recursive component references
 
 ## File Responsibilities
 1. variables.css
@@ -121,9 +128,12 @@ KunaiCat.github.io/
    - grid.css: Layout system
    - social-button.css: Button styling
    - social-button.html.template: Component template
+   - default.json: Default component data
+   - variant.json: Component variant data
 
-4. Python Scripts
-   - generate_site.py: Main site generation script
-   - Template processing
-   - Data loading and injection
-   - File output management 
+4. Python Generator
+   - Component resolution system
+   - Recursive template processing
+   - Data merging between default and variant files
+   - Template reference parsing with dot notation
+   - Error handling for missing templates/data 

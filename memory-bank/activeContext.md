@@ -1,70 +1,76 @@
 # Active Context: KunaiCat Social Links Hub
 
 ## Current Focus
-Implementing a template-based site generation system using Python while maintaining the modular component architecture.
+Enhancing the template-based site generation system with a more modular component approach using dot notation and component variants.
 
 ## Active Tasks
-1. Template System Implementation
-   - Update templates to use `{{PLACEHOLDER}}` format
-   - Create index.html template
-   - Move components to template directory
-   - Define data structure for social links
+1. Enhanced Templating System Implementation
+   - Develop component variant system with dot notation (`{{component.variant}}`)
+   - Create component-specific data directories with default.json files
+   - Implement data merging between defaults and variants
+   - Update template parser to support recursive component resolution
 
-2. Python Generator Development
-   - Create script to read templates
-   - Implement placeholder replacement
-   - Generate final HTML output
-   - Add error handling and logging
+2. Data Structure Reorganization
+   - Convert single social_links.json to component-specific JSON files
+   - Create default.json for each component type
+   - Implement variant-specific data files (twitch.json, discord.json, etc.)
+   - Establish clear 1:1 mapping between templates and data
 
-3. Testing
-   - Verify generated HTML matches current site
-   - Check responsive behavior
-   - Test all social links functionality
-   - Compare generated output with manual version
+3. Generator Refactoring
+   - Enhance template parser to identify component.variant syntax
+   - Create component resolution logic
+   - Implement recursive rendering pipeline
+   - Add error handling for missing templates/data
+
+4. Documentation Updates
+   - Document new templating system architecture
+   - Create examples of component variants
+   - Update README with new generator usage
+   - Add system diagrams for template resolution
 
 ## Recent Changes
-- Completed major refactoring of site structure
-- Separated styles into modular CSS files
-- Created component template system
-- Established CSS variables for theming
-- Updated project requirements for template system
+- Implemented initial Python-based template generation system
+- Created JSON data source for social links
+- Developed template engine with placeholder replacement
+- Planned enhanced templating system with component variants
+- Designed more modular data structure approach
 
 ## Next Steps
-1. Create templates/ directory
-2. Update social-button template with double curly braces
-3. Create index.html template
-4. Create data file for social links
-5. Develop Python generation script
-6. Test generated output
-7. Document template usage
+1. Create new directory structure for component-specific data
+2. Update template parser to handle dot notation
+3. Implement data merging between default and variant JSONs
+4. Convert existing social links to use variant system
+5. Test component variant rendering
+6. Document the new templating approach
 
 ## Active Decisions
-1. Template Format
-   - Use `{{PLACEHOLDER}}` format for all template variables
-   - Maintain clean, valid HTML in templates
-   - Keep templates DRY and focused
-   - Store data separately from templates
+1. Template Reference Format
+   - Use `{{component.variant}}` format for template references
+   - Example: `{{social-button.twitch}}` to render a Twitch button
+   - Fall back to default.json if no variant specified
+   - Combine default and variant data when both exist
 
-2. Component Structure
-   - Templates live in templates/ directory
-   - Each component has a template file
+2. Data Organization
+   - Directory structure mirrors component hierarchy
+   - Each component type has its own data directory
+   - Component variants stored as separate JSON files
+   - Required default.json for each component type
+
+3. Component Structure
+   - Templates live in templates/components/ directory
+   - Each component has a template file and multiple data files
    - Components use shared CSS variables
-   - SVG icons integrated via templates
-
-3. Data Management
-   - Store social links in JSON format
-   - Separate content from presentation
-   - Make data easily editable
-   - Structure for extensibility
+   - Components can be nested within other components
 
 4. Development Workflow
-   - Edit templates and data directly
-   - Generate site with Python script
-   - Manual testing of generated output
-   - Direct deployment to GitHub Pages
+   - Edit templates in templates/ directory
+   - Create/edit component data in data/components/ directory
+   - Run generator to process all templates recursively
+   - Deploy generated HTML to GitHub Pages
 
 ## Project Insights
-- Modular structure enables template-based generation
-- Template system will streamline future content updates
-- Python generation provides foundation for future static site generator
-- Current architecture supports blog expansion plans 
+- Dot notation provides a clean, intuitive component referencing system
+- Default.json with variant overrides reduces duplication and ensures consistency
+- Component-specific data files make the system more modular and extensible
+- New system will scale better for blog functionality and future components
+- Clear 1:1 mapping between templates and data improves maintainability 

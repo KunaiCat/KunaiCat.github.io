@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+  --primary-bg: #3E2723;
+  --container-bg: #5D4037;
+  --container-hover-bg: #795548;
+  --text-color: #FFFACD;
+  --accent-color: #BF360C;
+  --accent-hover: #65C0BA;
+
+  /* Spacing */
+  --container-padding: 20px 40px;
+  --border-radius: 8px;
+  --grid-gap: 16px;
+  --page-padding: 20px;
+  --container-height: 60px;
+
+  /* Animation */
+  --transition-speed: 0.3s;
+
+  /* Layout */
+  --max-width: 600px;
+  --mobile-breakpoint: 600px;
+} 

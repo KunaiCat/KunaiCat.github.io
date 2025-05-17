@@ -1,0 +1,13 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+@media (max-width: var(--mobile-breakpoint)) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+} 

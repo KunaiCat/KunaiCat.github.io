@@ -1,0 +1,57 @@
+.link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.container {
+  background-color: var(--container-bg);
+  border-top: 2px solid var(--accent-color);
+  border-left: 4px solid var(--accent-color);
+  border-right: none;
+  border-bottom: none;
+  padding: var(--container-padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: var(--container-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--transition-speed) ease,
+              border-top-color var(--transition-speed) ease,
+              border-left-color var(--transition-speed) ease;
+}
+
+.social-icon {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transform: translateX(25%);
+}
+
+.social-icon span {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icon svg {
+  color: var(--accent-color);
+  transition: color var(--transition-speed) ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% + 8px);
+}
+
+/* Hover Effects */
+.link-wrapper:hover .container {
+  background-color: var(--container-hover-bg);
+  border-top-color: var(--accent-hover);
+  border-left-color: var(--accent-hover);
+}
+
+.link-wrapper:hover .social-icon svg {
+  color: var(--accent-hover);
+} 
